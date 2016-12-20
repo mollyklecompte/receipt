@@ -1,0 +1,5 @@
+name = Login Redirect
+description = Redirects to dashboard when user logs in
+package = Custom modules
+core = 7.x
+files[] = login_redirect.module
