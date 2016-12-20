@@ -136,3 +136,7 @@ function receiptzen_preprocess_comment(&$variables, $hook) {
   $variables['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+function receiptzen_preprocess_html(&$variables) {
+   drupal_add_css('https://fonts.googleapis.com/css?family=Michroma|Open+Sans|Baloo+Chettan', array('group' => CSS_THEME));
+}

@@ -107,20 +107,28 @@
 
     </div></div> <!-- /.section, /#header -->
 
-    <?php if ($main_menu || $secondary_menu): ?>
-      <div id="navigation"><div class="section">
-        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
+    <?php if ($secondary_menu): ?>
+      <div id="userlinks"><div>
         <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
+      </div></div>
+    <?php endif; ?>
+
+    <?php if ($main_menu): ?>
+      <div id="navigation"><div class="section">
+        <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'tabs', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
+
       </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
 
-    <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
+
 
     <?php print $messages; ?>
 
+
+
     <div id="main-wrapper"><div id="main" class="clearfix">
+
+
 
       <div id="content" class="column"><div class="section">
 
@@ -131,25 +139,24 @@
         <?php print render($title_suffix); ?>
         <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
         <?php print render($page['help']); ?>
+        <div id="content_block_1" class="custom-class">
+            <?php print render($page['content_block_1']); ?>
+        </div>
+        <div id="content_block_2" class="custom-class">
+            <?php print render($page['content_block_2']); ?>
+        </div>
+        <div id="content_block_3" class="custom-class">
+            <?php print render($page['content_block_3']); ?>
+        </div>
+        <div id="content_block_4" class="custom-class">
+            <?php print render($page['content_block_4']); ?>
+        </div>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
         <?php print render($page['content']); ?>
 
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->
-
-      <div id="content_block_1" class="custom-class">
-          <?php print render($page['content_block_1']); ?>
-      </div>
-      <div id="content_block_2" class="custom-class">
-          <?php print render($page['content_block_2']); ?>
-      </div>
-      <div id="content_block_3" class="custom-class">
-          <?php print render($page['content_block_3']); ?>
-      </div>
-      <div id="content_block_4" class="custom-class">
-          <?php print render($page['content_block_4']); ?>
-      </div>
 
       <?php if ($page['sidebar_first']): ?>
         <div id="sidebar-first" class="column sidebar"><div class="section">
@@ -162,6 +169,10 @@
           <?php print render($page['sidebar_second']); ?>
         </div></div> <!-- /.section, /#sidebar-second -->
       <?php endif; ?>
+
+
+
+
 
     </div></div> <!-- /#main, /#main-wrapper -->
 

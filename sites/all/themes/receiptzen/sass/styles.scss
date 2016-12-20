@@ -108,8 +108,35 @@ $zen-gutters: 10px;
   @include zen-grid-container();
 }
 
-#highlighted {
+#userlinks {
+  float: right;
+}
+
+#userlinks h2 {
+  display: none;
+}
+
+#navigation h2 {
+  display: none;
+}
+
+#sidebar-first {
+  @include zen-grid-item(1.5,1);
+  padding: 2%;
+  margin: 1.4%;
+  background-color: rgba(245,237,238,0.5);
+}
+
+#sidebar-second {
   @include zen-new-row();
+  @include zen-grid-item(1.5,1);
+  padding: 2%;
+  margin: 1.4%;
+  background-color: rgba(245,237,238,0.5);
+}
+
+#highlighted {
+  // @include zen-new-row();
   @include zen-grid-item(7,1);
 }
 
@@ -119,24 +146,92 @@ $zen-gutters: 10px;
 // }
 
 #content {
-  // @include zen-new-row();
   @include zen-grid-item(4, 3);
 }
 
 #content_block_1 {
   @include zen-new-row();
-  @include zen-grid-item(2,3);
+  @include zen-grid-item(3.5,1);
+  background-color: rgba(245,237,238,0.5);
+
 }
 
 #content_block_2 {
-  @include zen-grid-item(2,5);
+  @include zen-grid-item(3.5,3.5);
+  background-color: rgba(245,237,238,0.5);
+
 }
 
 #content_block_3 {
   @include zen-new-row();
-  @include zen-grid-item(2,3);
+  @include zen-grid-item(3.5,1);
+  background-color: rgba(245,237,238,0.5);
+
 }
 
 #content_block_4 {
-  @include zen-grid-item(2,5);
+  @include zen-grid-item(3.5,3.5);
+  background-color: rgba(245,237,238,0.5);
+
+}
+
+// Element styling
+
+body {
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+a,
+a:link,
+a:active,
+a:link:visited,
+a:link:active, a:visited:active {
+  text-decoration: none;
+  color: (internal value);
+}
+
+h1#site-name{
+  font-size: 7rem;
+  color: red;
+}
+
+h1 {
+  font-family: 'Michroma', sans-serif;
+}
+
+h2 {
+  font-family: 'Michroma', sans-serif;
+}
+
+#site-name {
+  font-family: 'Baloo Chettan';
+  font-size: 3rem;
+  padding: 2%;
+  color: #303047;
+}
+
+a:hover {
+  color: #EF3E36;
+}
+
+#navigation {
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+
+
+.node-article {
+  background-color: rgba(245,237,238,0.5);
+  padding: 2%;
+  margin-top:0.4%;
+}
+
+.view-my-receipts {
+  background-color: rgba(245,237,238,0.5);
+  padding: 2%;
+  margin-top:0.4%;
 }
