@@ -38,23 +38,15 @@ function text_recognizer_form_submit($form, &$form_state) {
     $file = file_load($form_state['values']['image_upload']);
 
 
-    // $img_div = DOMDocument::getElementById ('edit-image-upload-upload');
-    // $img_anchors = $img_div->getElementsByTagName('a');
-    // $img_anchor = $img_anchors[0];
-    // $img_src = $img_anchor->getAttribute('src');
-    //
     $_SESSION['image_upload'] = $file;
     $form_state['redirect'] = 'text-recognizer-image-uploaded';
-    // $file->status = FILE_STATUS_PERMANENT;
-    //
-    // file_save($file);
   }
 }
 
 function text_recognizer_image_uploaded() {
     $image_upload = $_SESSION['image_upload'];
     drupal_add_js(drupal_get_path('module', 'text_recognizer') . '/js/draw_image.js');
-    // var_dump(get_object_vars($image_upload));
+    drupal_add_js(drupal_get_path('module', 'text_recognizer') . '/js/text_recognizer.js');
 
-    return 'LEZ GO ' . '<img id="uploaded-image" src="sites/default/files/' . $image_upload->filename . '">' . '<button id="draw_button">Draw</button>' . '<canvas id="image-canvas" width="500" height="500"></canvas>';
+    return 'LEZ GO ' . '<img id="uploaded-image" src="sites/default/files/' . $image_upload->filename . '">' . '<button id="draw_button">Draw</button>' . '<button id="execute_button">Execute</button>' . 'Your translation goes here: <div id="translation"></div>' . '<canvas id="image-canvas" width="500" height="800"></canvas>';
 }

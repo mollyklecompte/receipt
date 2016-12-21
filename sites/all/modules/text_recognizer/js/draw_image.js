@@ -6,7 +6,7 @@
       var context = canvas.getContext("2d");
       var img = document.getElementById("uploaded-image");
 
-      context.drawImage(img,100,100);
+      context.drawImage(img,0,0);
     });
   });
 })(jQuery);
