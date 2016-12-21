@@ -9,7 +9,7 @@ function text_recognizer_menu() {
         'type' => MENU_NORMAL_ITEM,
     );
     $items['text-recognizer-image-uploaded'] = array(
-        'title' => 'Your Text',
+        'title' => 'Your Image',
         'page callback' => 'text_recognizer_image_uploaded',
         'access callback' => TRUE,
         'type' => MENU_CALLBACK
@@ -37,7 +37,13 @@ function text_recognizer_form_submit($form, &$form_state) {
   if (isset($form_state['values']['image_upload'])) {
     $file = file_load($form_state['values']['image_upload']);
 
-    $_SESSION['image'] = $file;
+
+    // $img_div = DOMDocument::getElementById ('edit-image-upload-upload');
+    // $img_anchors = $img_div->getElementsByTagName('a');
+    // $img_anchor = $img_anchors[0];
+    // $img_src = $img_anchor->getAttribute('src');
+    //
+    $_SESSION['image_upload'] = $file;
     $form_state['redirect'] = 'text-recognizer-image-uploaded';
     // $file->status = FILE_STATUS_PERMANENT;
     //
@@ -46,6 +52,9 @@ function text_recognizer_form_submit($form, &$form_state) {
 }
 
 function text_recognizer_image_uploaded() {
-    $image = $_SESSION['image'];
-    return 'LEZ GO' . '<canvas id="image-canvas" width="500" height="500"></canvas>';
+    $image_upload = $_SESSION['image_upload'];
+    drupal_add_js(drupal_get_path('module', 'text_recognizer') . '/js/draw_image.js');
+    // var_dump(get_object_vars($image_upload));
+
+    return 'LEZ GO ' . '<img id="uploaded-image" src="sites/default/files/' . $image_upload->filename . '">' . '<button id="draw_button">Draw</button>' . '<canvas id="image-canvas" width="500" height="500"></canvas>';
 }
