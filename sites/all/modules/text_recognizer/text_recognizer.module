@@ -1,0 +1,51 @@
+<?php
+
+function text_recognizer_menu() {
+    $items['text-recognizer'] = array(
+        'title' => 'Get text from screenshot',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('text_recognizer_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['text-recognizer-image-uploaded'] = array(
+        'title' => 'Your Text',
+        'page callback' => 'text_recognizer_image_uploaded',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK
+    );
+    return $items;
+}
+
+function text_recognizer_form() {
+    $form['image_upload'] = array(
+    '#type' => 'managed_file',
+    '#name' => 'image_upload',
+    '#title' => t('Your image'),
+    '#size' => 800,
+    '#description' => t("blah blah blah blah blah."),
+    '#upload_location' => 'public://'
+  );
+  $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Go',
+    );
+  return $form;
+}
+
+function text_recognizer_form_submit($form, &$form_state) {
+  if (isset($form_state['values']['image_upload'])) {
+    $file = file_load($form_state['values']['image_upload']);
+
+    $_SESSION['image'] = $file;
+    $form_state['redirect'] = 'text-recognizer-image-uploaded';
+    // $file->status = FILE_STATUS_PERMANENT;
+    //
+    // file_save($file);
+  }
+}
+
+function text_recognizer_image_uploaded() {
+    $image = $_SESSION['image'];
+    return 'LEZ GO' . '<canvas id="image-canvas" width="500" height="500"></canvas>';
+}

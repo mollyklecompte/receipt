@@ -1,0 +1,5 @@
+name = Text Recognizer
+description = Recognizes text from image
+package = Custom Modules
+core = 7.x
+files[] = text_recognizer.module
