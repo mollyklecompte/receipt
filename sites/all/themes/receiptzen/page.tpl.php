@@ -139,6 +139,9 @@
         <?php print render($title_suffix); ?>
         <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
         <?php print render($page['help']); ?>
+
+        <?php print render($page['content']); ?>
+
         <div id="content_block_1" class="custom-class">
             <?php print render($page['content_block_1']); ?>
         </div>
@@ -153,7 +156,7 @@
         </div>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
-        <?php print render($page['content']); ?>
+      
 
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->
