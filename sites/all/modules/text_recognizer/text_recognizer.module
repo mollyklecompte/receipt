@@ -21,9 +21,9 @@ function text_recognizer_form() {
     $form['image_upload'] = array(
     '#type' => 'managed_file',
     '#name' => 'image_upload',
-    '#title' => t('Your image'),
-    '#size' => 800,
-    '#description' => t("blah blah blah blah blah."),
+    '#title' => t('Get text from screenshot'),
+    '#size' => 40,
+    '#description' => t("Higher resolution images with black font on a light background are most likely to work."),
     '#upload_location' => 'public://'
   );
   $form['submit'] = array(
@@ -48,5 +48,5 @@ function text_recognizer_image_uploaded() {
     drupal_add_js(drupal_get_path('module', 'text_recognizer') . '/js/draw_image.js');
     drupal_add_js(drupal_get_path('module', 'text_recognizer') . '/js/text_recognizer.js');
 
-    return 'LEZ GO ' . '<img id="uploaded-image" src="sites/default/files/' . $image_upload->filename . '">' . '<button id="draw_button">Draw</button>' . '<button id="execute_button">Execute</button>' . 'Your translation goes here: <div id="translation"></div>' . '<canvas id="image-canvas" width="500" height="800"></canvas>';
+    return '<img id="uploaded-image" src="sites/default/files/' . $image_upload->filename . '"><br>' . '<button id="draw_button">Draw</button>' . '<button id="execute_button">Execute</button>' . '<h4><strong>Your image text goes here:</strong></h4> <div id="translation"></div><br>' . '<canvas id="image-canvas" width="800" height="800"></canvas>';
 }

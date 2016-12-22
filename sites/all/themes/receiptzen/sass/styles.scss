@@ -125,6 +125,7 @@ $zen-gutters: 10px;
   padding: 2%;
   margin: 1.4%;
   background-color: rgba(245,237,238,0.5);
+  float: left;
 }
 
 #sidebar-second {
@@ -132,7 +133,7 @@ $zen-gutters: 10px;
   @include zen-grid-item(1.5,1);
   padding: 2%;
   margin: 1.4%;
-  background-color: rgba(245,237,238,0.5);
+  // background-color: rgba(245,237,238,0.5);
 }
 
 #highlighted {
@@ -152,14 +153,14 @@ $zen-gutters: 10px;
 #content_block_1 {
   @include zen-new-row();
   @include zen-grid-item(3,1);
-  background-color: rgba(245,237,238,0.5);
+  // background-color: rgba(245,237,238,0.5);
   margin: 2%;
   padding: 2%;
 }
 
 #content_block_2 {
   @include zen-grid-item(3,4.5);
-  background-color: rgba(245,237,238,0.5);
+  // background-color: rgba(245,237,238,0.5);
   margin: 2%;
   padding: 2%;
 }
@@ -167,14 +168,14 @@ $zen-gutters: 10px;
 #content_block_3 {
   @include zen-new-row();
   @include zen-grid-item(3,1);
-  background-color: rgba(245,237,238,0.5);
+  // background-color: rgba(245,237,238,0.5);
   margin: 2%;
   padding: 2%;
 }
 
 #content_block_4 {
   @include zen-grid-item(3,4.5);
-  background-color: rgba(245,237,238,0.5);
+  // background-color: rgba(245,237,238,0.5);
   margin: 2%;
   padding: 2%;
 }
@@ -242,4 +243,10 @@ a:hover {
 
 .widgets {
   margin: 0.5%;
+}
+
+.view-grouping-header {
+  font-size: 1.5rem;
+  font-weight: bolder;
+
 }

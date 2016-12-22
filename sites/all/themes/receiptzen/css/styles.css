@@ -1853,6 +1853,7 @@ tr.drag-previous {
   padding: 2%;
   margin: 1.4%;
   background-color: rgba(245, 237, 238, 0.5);
+  float: left;
 }
 
 [dir="rtl"] #sidebar-first {
@@ -1869,7 +1870,6 @@ tr.drag-previous {
   margin-right: -100%;
   padding: 2%;
   margin: 1.4%;
-  background-color: rgba(245, 237, 238, 0.5);
 }
 
 [dir="rtl"] #sidebar-second {
@@ -1914,7 +1914,6 @@ tr.drag-previous {
   width: 42.85714%;
   margin-left: 0%;
   margin-right: -100%;
-  background-color: rgba(245, 237, 238, 0.5);
   margin: 2%;
   padding: 2%;
 }
@@ -1934,7 +1933,6 @@ tr.drag-previous {
   width: 42.85714%;
   margin-left: 50%;
   margin-right: -100%;
-  background-color: rgba(245, 237, 238, 0.5);
   margin: 2%;
   padding: 2%;
 }
@@ -1951,7 +1949,6 @@ tr.drag-previous {
   width: 42.85714%;
   margin-left: 0%;
   margin-right: -100%;
-  background-color: rgba(245, 237, 238, 0.5);
   margin: 2%;
   padding: 2%;
 }
@@ -1971,7 +1968,6 @@ tr.drag-previous {
   width: 42.85714%;
   margin-left: 50%;
   margin-right: -100%;
-  background-color: rgba(245, 237, 238, 0.5);
   margin: 2%;
   padding: 2%;
 }
@@ -2040,6 +2036,11 @@ a:hover {
 
 .widgets {
   margin: 0.5%;
+}
+
+.view-grouping-header {
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
 
 /*# sourceMappingURL=styles.css.map */
