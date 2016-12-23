@@ -1985,15 +1985,15 @@ body {
 a,
 a:link,
 a:active,
+a:visited,
 a:link:visited,
 a:link:active, a:visited:active {
   text-decoration: none;
-  color: internal value;
+  color: #0099cc;
 }
 
 h1#site-name {
   font-size: 7rem;
-  color: red;
 }
 
 h1 {
@@ -2009,6 +2009,14 @@ h2 {
   font-size: 3rem;
   padding: 2%;
   color: #303047;
+}
+
+#site-name a {
+  color: #303047;
+}
+
+#site-name a:hover {
+  color: #EF3E36;
 }
 
 a:hover {
